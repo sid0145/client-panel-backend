@@ -49,14 +49,14 @@ exports.getUser = (req, res) => {
         });
       }
       const token = jwt.sign(
-        { email: fetchedUser.email, userId: fetchedUser._id },
+        { email: fetchedUser.email, username: fetchedUser.username },
         "secret_this_should_be_longer",
         { expiresIn: "1h" }
       );
       res.status(200).json({
         token: token,
         expiresIn: 3600,
-        userId: fetchedUser._id,
+        username: fetchedUser.username,
       });
     })
     .catch((err) => {

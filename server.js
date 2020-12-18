@@ -8,6 +8,7 @@ const app = express();
 //****************************Router config  */
 
 const userRoute = require("./src/routes/user");
+const clientRoute = require("./src/routes/client");
 
 //***************************global configuration**********************/
 const PORT = 9000 || process.env.PORT;
@@ -36,6 +37,7 @@ mongoose
 
 //************************all route endpoins are here */
 app.use("/api", userRoute);
+app.use("/api", clientRoute);
 
 //**************************port listing */
 app.listen(PORT, () => {
