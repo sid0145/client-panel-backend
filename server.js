@@ -19,8 +19,7 @@ app.use(cors());
 //************************database connection here ******************/
 mongoose
   .connect(
-    process.env.MONGO_URI ||
-      "mongodb+srv://Sid:jBWcaYOiVj9oZw9M@cluster0.xz4rb.mongodb.net/client-panel?retryWrites=true",
+    process.env.MONGO_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
